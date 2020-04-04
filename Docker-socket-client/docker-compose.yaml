@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  socketclient:
+    build: .
+    restart: always
+    container_name: socketclient
+    networks: 
+      - socket_server_network
+
+networks: 
+  socket_server_network:
+    external: true
+    name: my-app-net
+
+
+

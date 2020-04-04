@@ -1,0 +1,35 @@
+version: "3.5"
+services:
+  socketserver:
+    container_name: socketserver
+    build: .
+    networks: 
+      - socket_server_network
+      - redis_network
+    depends_on:
+      - redis
+    ports: 
+      - 2222:2222 
+  redis:
+    image: redis
+    container_name: redis
+    restart: always
+    ports: 
+      - 6379:6379
+    networks:
+      - redis_network
+    volumes:
+      - redis_volume:/data
+
+networks: 
+  redis_network:
+    driver: bridge
+  socket_server_network:
+    driver: bridge
+    name: my-app-net
+
+volumes: 
+  redis_volume:
+
+
+
