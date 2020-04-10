@@ -1,4 +1,4 @@
-# Communication Between node.js socket and client server using Docker Compose File 
+# Communication Between node.js socket server and client using Docker Compose File 
 
 Docker is great tool for managing and deploying microservices which can be used either on development or deployment. Here we explain how two docker compose file communicate with each other in development.
 
